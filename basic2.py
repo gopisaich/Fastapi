@@ -22,3 +22,12 @@ def get_oneproduct(product_id:int):
     return{
         "Error":"Product not found for parameter."
     }
+
+## query parameters
+
+@app.get("/greet")
+def greet_user(name:str, age:int):
+    return {
+        "greet":f"Hello {name}, Your age is {age}"
+    }
+ #for output(http://127.0.0.1:8000/greet?name=gopi&age=21)
