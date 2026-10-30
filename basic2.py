@@ -9,3 +9,15 @@ def home():
 @app.get("/products")
 def get_products():
     return products
+
+# path parameters
+
+@app.get("/product/{product_id}")
+
+def get_oneproduct(product_id:int):
+    for oneProduct in products:
+        if oneProduct.get("id") == product_id:
+            return oneProduct
+    return{
+        "Error":"Product not found for parameter."
+    }
